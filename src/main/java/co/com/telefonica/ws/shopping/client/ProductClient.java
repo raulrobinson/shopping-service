@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "product-service")
+import static co.com.telefonica.ws.shopping.config.ConfigurationConstants.PRODUCT_URL;
+
+@FeignClient(name = "product-service", url = PRODUCT_URL)
 @RequestMapping(value = "/products")
 public interface ProductClient {
 

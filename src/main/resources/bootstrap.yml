@@ -37,9 +37,6 @@ server:
   error:
     include-message: always
     include-binding-errors: always
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
 eureka:
   client:
     serviceUrl:
@@ -52,3 +49,9 @@ management:
     web:
       exposure:
         include: "*"
+feign:
+  client:
+    customer:
+      url: http://customer-service-101.gobierno.svc.cluster.local:8092/
+    product:
+      url: http://product-service-103.gobierno.svc.cluster.local:8091/
